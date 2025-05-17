@@ -1,6 +1,15 @@
-import Link from 'next/link';
-import { Code, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import {
+  Code,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Facebook,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const currentYear = new Date().getFullYear();
 
@@ -19,19 +28,35 @@ export function Footer() {
               We craft digital experiences that elevate brands and drive growth.
             </p>
             <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-brand">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-brand"
+              >
                 <Facebook size={18} />
                 <span className="sr-only">Facebook</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-brand">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-brand"
+              >
                 <Twitter size={18} />
                 <span className="sr-only">Twitter</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-brand">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-brand"
+              >
                 <Instagram size={18} />
                 <span className="sr-only">Instagram</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-brand">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-brand"
+              >
                 <Linkedin size={18} />
                 <span className="sr-only">LinkedIn</span>
               </Button>
@@ -42,16 +67,18 @@ export function Footer() {
           <div className="md:col-span-2">
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                    className="text-muted-foreground hover:text-brand transition-colors"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Home", "About", "Services", "Portfolio", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <Link
+                      href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                      className="text-muted-foreground hover:text-brand transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -60,15 +87,15 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {[
-                'Web Development',
-                'Mobile App Development',
-                'Web Design',
-                'Graphic Design',
-                'Digital Marketing'
+                "Web Development",
+                "Mobile App Development",
+                "Web Design",
+                "Graphic Design",
+                "Digital Marketing",
               ].map((service) => (
                 <li key={service}>
-                  <Link 
-                    href="/services" 
+                  <Link
+                    href="/services"
                     className="text-muted-foreground hover:text-brand transition-colors"
                   >
                     {service}
@@ -84,27 +111,27 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Mail className="mr-2 h-5 w-5 text-brand shrink-0 mt-0.5" />
-                <a 
-                  href="mailto:hello@webryxon.com" 
+                <a
+                  href="mailto:webryxon@gmail.com"
                   className="text-muted-foreground hover:text-brand transition-colors"
                 >
-                  hello@webryxon.com
+                  webryxon@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
                 <Phone className="mr-2 h-5 w-5 text-brand shrink-0 mt-0.5" />
-                <a 
-                  href="tel:+1234567890" 
+                <a
+                  href="tel:+1234567890"
                   className="text-muted-foreground hover:text-brand transition-colors"
                 >
-                  +1 (234) 567-890
+                  +91 751 140 803
                 </a>
               </li>
               <li className="flex items-start">
-                <MapPin className="mr-2 h-5 w-5 text-brand shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">
+                {/* <MapPin className="mr-2 h-5 w-5 text-brand shrink-0 mt-0.5" /> */}
+                {/* <span className="text-muted-foreground">
                   123 Design Street, San Francisco, CA 94107
-                </span>
+                </span> */}
               </li>
             </ul>
           </div>

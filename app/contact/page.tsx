@@ -1,25 +1,25 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Mail,
+  Phone,
+  MapPin,
   Send,
-  Linkedin, 
-  Twitter, 
-  Instagram, 
-  Facebook 
-} from 'lucide-react';
-import { fadeInLeft, fadeInRight } from '@/lib/animations';
-import { useAnimateOnScroll } from '@/lib/useAnimateOnScroll';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+  Linkedin,
+  Twitter,
+  Instagram,
+  Facebook,
+} from "lucide-react";
+import { fadeInLeft, fadeInRight } from "@/lib/animations";
+import { useAnimateOnScroll } from "@/lib/useAnimateOnScroll";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -33,15 +33,19 @@ import {
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  subject: z
+    .string()
+    .min(5, { message: "Subject must be at least 5 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
   const { ref, inView } = useAnimateOnScroll(0.2);
-  
+
   // Initialize form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -69,7 +73,8 @@ export default function ContactPage() {
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-lg text-muted-foreground">
-              Ready to start your project? Get in touch with us today and let's discuss how we can help you achieve your digital goals.
+              Ready to start your project? Get in touch with us today and let's
+              discuss how we can help you achieve your digital goals.
             </p>
           </div>
         </div>
@@ -87,9 +92,12 @@ export default function ContactPage() {
               className="bg-card p-8 rounded-lg shadow-sm border border-border"
             >
               <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-              
+
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
                   <div className="grid grid-cols-1 gap-6">
                     <FormField
                       control={form.control}
@@ -104,7 +112,7 @@ export default function ContactPage() {
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="email"
@@ -112,13 +120,17 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="Your email" {...field} />
+                            <Input
+                              type="email"
+                              placeholder="Your email"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="subject"
@@ -126,13 +138,16 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Subject</FormLabel>
                           <FormControl>
-                            <Input placeholder="Subject of your message" {...field} />
+                            <Input
+                              placeholder="Subject of your message"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="message"
@@ -140,10 +155,10 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Message</FormLabel>
                           <FormControl>
-                            <Textarea 
-                              placeholder="How can we help you?" 
+                            <Textarea
+                              placeholder="How can we help you?"
                               rows={5}
-                              {...field} 
+                              {...field}
                             />
                           </FormControl>
                           <FormMessage />
@@ -151,8 +166,11 @@ export default function ContactPage() {
                       )}
                     />
                   </div>
-                  
-                  <Button type="submit" className="w-full bg-brand hover:bg-brand-dark">
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-brand hover:bg-brand-dark"
+                  >
                     Send Message
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
@@ -167,7 +185,7 @@ export default function ContactPage() {
               variants={fadeInRight}
             >
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              
+
               <div className="space-y-6 mb-8">
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 bg-brand/10 p-3 rounded-full">
@@ -175,54 +193,55 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Email Us</h3>
-                    <a 
-                      href="mailto:hello@webryxon.com" 
+                    <a
+                      href="mailto:webryxon@gmail.com"
                       className="text-muted-foreground hover:text-brand transition-colors"
                     >
-                      hello@webryxon.com
+                      webryxon@gmail.com
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 bg-brand/10 p-3 rounded-full">
                     <Phone className="h-6 w-6 text-brand" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Call Us</h3>
-                    <a 
-                      href="tel:+1234567890" 
+                    <a
+                      href="tel:+1234567890"
                       className="text-muted-foreground hover:text-brand transition-colors"
                     >
-                      +1 (234) 567-890
+                      +91 751 140 803
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
-                  <div className="mr-4 mt-1 bg-brand/10 p-3 rounded-full">
+                  {/* <div className="mr-4 mt-1 bg-brand/10 p-3 rounded-full">
                     <MapPin className="h-6 w-6 text-brand" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Visit Us</h3>
+                    <h3 className="font-semibold text-lg">+91 751 140 803</h3>
                     <address className="text-muted-foreground not-italic">
-                      123 Design Street<br />
+                      123 Design Street
+                      <br />
                       San Francisco, CA 94107
                     </address>
-                  </div>
+                  </div> */}
                 </div>
               </div>
-              
+
               <div className="mt-10">
                 <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
                 <div className="flex space-x-4">
                   {[
-                    { icon: Facebook, label: 'Facebook', href: '#' },
-                    { icon: Twitter, label: 'Twitter', href: '#' },
-                    { icon: Instagram, label: 'Instagram', href: '#' },
-                    { icon: Linkedin, label: 'LinkedIn', href: '#' },
+                    { icon: Facebook, label: "Facebook", href: "#" },
+                    { icon: Twitter, label: "Twitter", href: "#" },
+                    { icon: Instagram, label: "Instagram", href: "#" },
+                    { icon: Linkedin, label: "LinkedIn", href: "#" },
                   ].map((social) => (
-                    <Button 
+                    <Button
                       key={social.label}
                       variant="outline"
                       size="icon"
@@ -234,7 +253,7 @@ export default function ContactPage() {
                   ))}
                 </div>
               </div>
-              
+              {/* 
               <div className="mt-10 p-6 bg-muted rounded-lg">
                 <h3 className="font-semibold text-lg mb-2">Working Hours</h3>
                 <div className="space-y-2 text-muted-foreground">
@@ -251,7 +270,7 @@ export default function ContactPage() {
                     <span>Closed</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
