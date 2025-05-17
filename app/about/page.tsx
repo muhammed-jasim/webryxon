@@ -218,7 +218,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section ref={teamRef} className="section-padding bg-muted/50">
+      {/* <section ref={teamRef} className="section-padding bg-muted/50">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -294,7 +294,7 @@ export default function AboutPage() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </React.Fragment>
   );
 }

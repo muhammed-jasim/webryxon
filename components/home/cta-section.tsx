@@ -50,7 +50,7 @@ export function CtaSection() {
               asChild
               variant="outline"
               size="lg"
-              className="bg-white text-brand hover:bg-white/90"
+              className="bg-white text-brand hover:bg-white/90.-"
             >
               <Link href="/services">Our Services</Link>
             </Button>
